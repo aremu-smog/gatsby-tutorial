@@ -1,0 +1,3 @@
+tasks:
+  - init: npm install gatsby-cli
+    command: gatsby develop
