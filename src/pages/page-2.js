@@ -19,13 +19,16 @@ const posts = useStaticQuery(graphql `
                         date
                         title
                     }
+                    fields{
+                        slug
+                    }
                 }
             }
         }
     }
 `)
 
-const allPosts = posts.allMarkdownRemark.edges.map(post => <li><h2>{post.node.frontmatter.title}</h2><p>{post.node.frontmatter.date}</p><hr/></li>)
+const allPosts = posts.allMarkdownRemark.edges.map(post => <Link to={`/blog/${post.node.fields.slug}`}><li><h2>{post.node.frontmatter.title}</h2><p>{post.node.frontmatter.date}</p><hr/></li></Link>)
 return(
 
   <Layout>
