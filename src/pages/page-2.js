@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import PostList from '../components/PostList'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -24,7 +25,7 @@ const posts = useStaticQuery(graphql `
     }
 `)
 
-const allPosts = posts.allMarkdownRemark.edges.map(post => `<li><h2>${post.node.frontmatter.title}</h2><p>${post.node.frontmatter.date}</p><hr/></li>`)
+const allPosts = posts.allMarkdownRemark.edges.map(post => <li><h2>{post.node.frontmatter.title}</h2><p>{post.node.frontmatter.date}</p><hr/></li>)
 return(
 
   <Layout>
