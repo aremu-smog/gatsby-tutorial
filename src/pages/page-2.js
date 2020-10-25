@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import PostList from '../components/PostList'
 
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -52,7 +53,7 @@ const posts = useStaticQuery(graphql `
 
 const allContenfulPosts = posts.allContentfulBlogPost.edges.map( 
     contentfulPost => 
-    <Link to={contentfulPost.node.slug}>
+    <Link to={`/blog/${contentfulPost.node.slug}`}>
         <li><h2>{contentfulPost.node.title}</h2>
         <p>{contentfulPost.node.published}</p>
     </li>
