@@ -1,11 +1,11 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import PostList from '../components/PostList'
+
 
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-
+// import SEO from "../components/seo"
+import Head from "../components/head"
 
     
 
@@ -64,7 +64,8 @@ const allPosts = posts.allMarkdownRemark.edges.map(post => <Link to={`/blog/${po
 return(
 
   <Layout>
-    <SEO title="Page two" />
+    <Head pageTitle="Blog" />
+    {/* <SEO title="Page two" /> */}
     <h1>Hi from the second page</h1>
     <p>Welcome tothe  page 2</p>
     <Link to="/">Go back to the homepage</Link>

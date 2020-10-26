@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
-
+import Head from '../components/head'
 
 import Layout from '../components/layout'
 
@@ -47,6 +47,7 @@ const Blog = (props) => {
     }
     return (
         <Layout>
+            <Head pageTitle={props.data.contentfulBlogPost.title} />
             <h1>{props.data.contentfulBlogPost.title}</h1>
             <p>{props.data.contentfulBlogPost.published}</p>
             <div>
